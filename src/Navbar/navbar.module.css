@@ -1,0 +1,19 @@
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+  color: gray;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.link:global(.active) {
+  color: orange;
+}
