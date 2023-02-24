@@ -10,7 +10,6 @@ const Navbar = () => {
       </NavLink>
     </li>
   ));
-
   return <ul className={styles.menu}>{elements}</ul>;
 };
 
