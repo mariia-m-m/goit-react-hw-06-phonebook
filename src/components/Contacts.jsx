@@ -15,12 +15,14 @@ const Contacts = ({ onDelete, contacts }) => {
 
 export default Contacts;
 
-// Contacts.propTypes = {
-//   onDelete: PropTypes.func.isRequired,
-//   contacts: PropTypes.arrayOf({
-//     id: PropTypes.string.isRequired,
-//     number: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     main: PropTypes.bool.isRequired,
-//   }),
-// };
+Contacts.propTypes = {
+  onDelete: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      main: PropTypes.bool.isRequired,
+    })
+  ),
+};

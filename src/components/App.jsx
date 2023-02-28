@@ -4,7 +4,6 @@ import Navbar from '../Navbar/Navbar';
 import { Provider } from 'react-redux';
 import { store, persistor } from '../redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import persistStore from 'redux-persist/es/persistStore';
 const Phonebook = lazy(() => import('../pages/Phonebook/Phonebook'));
 const MainContacts = lazy(() => import('../pages/MainContacts/MainContacts'));
 const NotFound = lazy(() => import('../pages/NotFound'));

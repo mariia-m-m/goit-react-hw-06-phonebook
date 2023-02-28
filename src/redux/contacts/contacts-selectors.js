@@ -1,6 +1,7 @@
 export const getAllContacts = store => store.contacts;
+
 export const getMainContacts = store => {
-    const maincontacts = store.contacts.filter(({ main }) => main);
+const maincontacts = store.contacts.filter(({ main }) => main);
     return maincontacts;
 }
 export const getFilteredContacts = ({contacts, filter}) => {
