@@ -6,26 +6,28 @@ const Form = ({ onSubmit }) => {
   const initialState = {
     name: '',
     number: '',
+    main: false,
   };
 
   const [state, setState] = useState({ ...initialState });
 
-  const { name, number } = state;
+  const { name, number, main } = state;
 
   // Якщо робити по одному хуку на кожне значення:
   // const [name, setName] = useState('');
   // const [number, setNumber] = useState('');
 
   const onChange = event => {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
+    const newValue = type === 'checkbox' ? checked : value;
     setState(prevState => {
-      return { ...prevState, [name]: value };
+      return { ...prevState, [name]: newValue };
     });
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    onSubmit({ name, number });
+    onSubmit({ name, number, main });
     reset();
   };
 
@@ -68,6 +70,17 @@ const Form = ({ onSubmit }) => {
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
+          />
+        </label>
+        <label htmlFor="get-main">
+          <p className={styles.name}>Add to main contact?</p>
+          <input
+            id="get-main"
+            className={styles.checkbox}
+            checked={main}
+            onChange={onChange}
+            type="checkbox"
+            name="main"
           />
         </label>
 
